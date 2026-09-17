@@ -1,0 +1,67 @@
+[
+
+    {
+        "id": 1,
+        "name": "Statue",
+        "description":"Handmade clat statue",
+        "price": 299,
+        "stock": 5,
+        "image" :"statue.jpg"
+    },
+
+    {
+        "id": 2,
+        "name": "Bookmark",
+       "description": "Harry potter themed",
+        "price": 99,
+        "stock": 8,
+        "image": "bookmark.jpg"
+    },
+
+    {
+        "id": 3,
+       "name": "Handmade Jewellery",
+        "description": "Elegant handmade jewellery piece",
+        "price": 149,
+        "stock": 6,
+        "image": "WhatsApp Image 2026-09-08 at 18.26.00.jpeg"
+    },
+
+    {
+        "id": 4,
+       "name": "Madhubani painting",
+        "description": "Handmade ",
+        "price": 299,
+        "stock": 10,
+        "image": "WhatsApp Image 2026-09-09 at 09.24.34.jpeg"
+    },
+
+    {
+        "id": 5,
+        "name": "Phone cover",
+        "description": "Customize phonecover",
+        "price": 199,
+        "stock": 7,
+       "image" : "spider.jpg"
+    },
+
+    {
+        "id": 6,
+        "name": "Sketch",
+        "description":"Elegant handmade jewellery piece.",
+        "price": 149,
+        "stock": 4,
+        "image": "sketch.jpg"
+    },
+
+    {
+        "id": 7,
+        "name": "Spiderman box",
+        "description": "Creative gift box",
+        "price": 299,
+        "stock": 9,
+        "image":"box.jpg"
+    }
+
+    
+]
