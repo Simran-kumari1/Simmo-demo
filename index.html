@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Samify | Handmade Art Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+    <header>
+
+        <div class="logo">SAMIFY 🎨</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+
+            <button id="cartButton">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </button>
+        </nav>
+
+    </header>
+
+
+    
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">HANDMADE • CREATIVE • UNIQUE</p>
+
+            <h1>Art That Speaks<br>For Itself 😌.</h1>
+
+            <p>
+                Discover beautiful handmade paintings,
+                sketches, jewellery, clay art and customized gifts.
+            </p>
+
+            <a href="#shop" class="shop-button">
+                Explore Collection
+            </a>
+
+        </div>
+
+    </section>
+
+
+    
+    <section class="shop" id="shop">
+
+        <div class="section-heading">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>Explore Our Art</h2>
+
+            <span>
+                Unique creations made with creativity and passion.
+            </span>
+
+        </div>
+
+        <div id="productGrid" class="product-grid">
+
+            <div class="loading">
+                Loading products...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+    <div id="cartModal" class="modal">
+
+        <div class="modal-box cart-box">
+
+            <button id="closeCart" class="close">
+                ×
+            </button>
+
+            <h2>Your Shopping Cart</h2>
+
+            <div id="cartItems"></div>
+
+
+            <div class="summary">
+
+                <div>
+                    <span>Subtotal</span>
+                    <strong>₹<span id="subtotal">0.00</span></strong>
+                </div>
+
+
+                <div class="promo">
+
+                    <input
+                        type="text"
+                        id="promoInput"
+                        placeholder="Enter promo code"
+                    >
+
+                    <button id="promoButton">
+                        Apply
+                    </button>
+
+                </div>
+
+
+                <div>
+                    <span>Discount</span>
+                    <strong class="discount">
+                        -₹<span id="discount">0.00</span>
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>Tax (5%)</span>
+                    <strong>₹<span id="tax">0.00</span></strong>
+                </div>
+
+
+                <hr>
+
+
+                <div class="total">
+                    <span>Grand Total</span>
+
+                    <strong>
+                        ₹<span id="grandTotal">0.00</span>
+                    </strong>
+                </div>
+
+
+                <button id="checkoutButton" class="main-button">
+                    Proceed to Checkout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="checkoutModal" class="modal">
+
+        <div class="modal-box checkout-box">
+
+            <button id="closeCheckout" class="close">
+                ×
+            </button>
+
+            <h2>Checkout</h2>
+
+            <div class="steps">
+
+                <span id="indicator1" class="active">
+                    1 Details
+                </span>
+
+                <span id="indicator2">
+                    2 Payment
+                </span>
+
+                <span id="indicator3">
+                    3 Confirm
+                </span>
+
+            </div>
+
+
+            <div id="step1" class="step active-step">
+
+                <h3>Customer Details</h3>
+
+
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                >
+
+                <small id="nameError"></small>
+
+
+                <label>Email</label>
+
+                <input
+                    type="text"
+                    id="email"
+                    placeholder="example@gmail.com"
+                >
+
+                <small id="emailError"></small>
+
+
+                <label>Phone</label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    maxlength="10"
+                    placeholder="10 digit mobile number"
+                >
+
+                <small id="phoneError"></small>
+
+
+                <label>Delivery Address</label>
+
+                <textarea
+                    id="address"
+                    placeholder="Enter your complete address"
+                ></textarea>
+
+                <small id="addressError"></small>
+
+
+                <button
+                    id="paymentNext"
+                    class="main-button"
+                >
+                    Continue to Payment
+                </button>
+
+            </div>
+
+            <div id="step2" class="step">
+
+                <h3>Payment Details</h3>
+
+
+                <label>Dummy Card Number</label>
+
+                <input
+                    type="text"
+                    id="card"
+                    maxlength="16"
+                    placeholder="1234567890123456"
+                >
+
+                <small id="cardError"></small>
+
+
+                <label>Expiry Date</label>
+
+                <input
+                    type="text"
+                    id="expiry"
+                    maxlength="5"
+                    placeholder="MM/YY"
+                >
+
+                <small id="expiryError"></small>
+
+
+                <label>CVV</label>
+
+                <input
+                    type="password"
+                    id="cvv"
+                    maxlength="3"
+                    placeholder="123"
+                >
+
+                <small id="cvvError"></small>
+
+
+                <div class="button-row">
+
+                    <button
+                        id="detailsBack"
+                        class="back-button"
+                    >
+                        Back
+                    </button>
+
+                    <button
+                        id="confirmNext"
+                        class="main-button"
+                    >
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="step3" class="step">
+
+                <h3>Confirm Your Order</h3>
+
+                <div id="orderSummary" class="order-summary"></div>
+
+
+                <div class="button-row">
+
+                    <button
+                        id="paymentBack"
+                        class="back-button"
+                    >
+                        Back
+                    </button>
+
+                    <button
+                        id="placeOrder"
+                        class="main-button"
+                    >
+                        Place Order
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="about" id="about">
+
+        <div class="section-heading">
+
+            <p>WHY SAMIFY?</p>
+
+            <h2>Made For Art Lovers</h2>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <div>🎨</div>
+                <h3>Original Art</h3>
+                <p>Unique handmade creations.</p>
+            </div>
+
+            <div class="feature">
+                <div>✨</div>
+                <h3>Customization</h3>
+                <p>Personalized products for you.</p>
+            </div>
+
+            <div class="feature">
+                <div>📦</div>
+                <h3>Safe Delivery</h3>
+                <p>Carefully packed artworks.</p>
+            </div>
+            <div class="feature">
+                <div>💳</div>
+                <h3>Easy Checkout</h3>
+                <p>Simple and smooth shopping.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <h2>SAMIFY</h2>
+
+        <p>
+            Handmade with creativity 🎨
+        </p>
+
+        <p>
+            © 2026 Samify. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
